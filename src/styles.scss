@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,800");
+
+$primary: #333f4c;
+$warning: #ffc000;
+$red: #cd3838;
+$navbar-height: 6.25rem;
+$navbar-item-img-max-height: 2.25rem;
+$family-sans-serif: "Poppins", BlinkMacSystemFont, -apple-system, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+@import "bulma/bulma";
+@import "bulma-switch/src/sass";
+
+.people-list {
+  .tile {
+    &.is-parent {
+      padding: 0.25rem;
+    }
+  }
+
+  .notification {
+    border-radius: 8px;
+  }
+}
+
+

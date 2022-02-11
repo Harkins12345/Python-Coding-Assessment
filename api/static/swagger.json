@@ -1,0 +1,164 @@
+{
+  "definitions": {
+    "Person": {
+      "properties": {
+        "authorised": {
+          "type": "boolean"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "firstName": {
+          "maxLength": 100,
+          "minLength": 2,
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lastName": {
+          "maxLength": 100,
+          "minLength": 2,
+          "type": "string"
+        }
+      },
+      "required": [
+        "authorised",
+        "enabled",
+        "firstName",
+        "lastName"
+      ],
+      "type": "object"
+    }
+  },
+  "info": {
+    "title": "Python API Tech Test",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/people": {
+      "get": {
+        "description": "PeopleListResource GET all endpoint",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Person"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "people"
+        ]
+      },
+      "post": {
+        "description": "PeopleListResource Create new Person",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        },
+        "tags": [
+          "people"
+        ]
+      }
+    },
+    "/api/people/{person_id}": {
+      "delete": {
+        "description": "PersonResource DELETE endpoint",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        },
+        "tags": [
+          "people"
+        ]
+      },
+      "get": {
+        "description": "PersonResource GET endpoint",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        },
+        "tags": [
+          "people"
+        ]
+      },
+      "put": {
+        "description": "PersonResource PUT endpoint",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "person_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
+          }
+        },
+        "tags": [
+          "people"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0"
+}
